@@ -381,3 +381,42 @@ footer {
   left: 0;
   top: -2px;
 }
+/* Premium Mobile Responsiveness Patch */
+@media (max-width: 768px) {
+    
+    /* 1. Fix the header overlapping the hero text */
+    .hero {
+        padding-top: 140px !important; /* Pushes the title down so it clears the header */
+        min-height: 90vh;
+    }
+
+    .hero-content h1 {
+        font-size: 1.8rem !important; /* Makes the title a bit punchier for small screens */
+        line-height: 1.3;
+    }
+
+    /* 2. Add safe breathing room to the sides of the screen */
+    .container {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+        width: 100% !important;
+    }
+
+    /* 3. Stack the 2-column grids cleanly on mobile */
+    .grid-2 {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 1.5rem !important;
+    }
+
+    /* 4. Align the buttons side-by-side or stack them nicely */
+    .gov-actions {
+        flex-direction: column !important; /* Stacks the download buttons cleanly if screen is too narrow */
+        gap: 0.75rem !important;
+    }
+    
+    .gov-actions .btn {
+        width: 100% !important; /* Makes buttons touch-friendly on mobile */
+        text-align: center;
+    }
+}
