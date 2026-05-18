@@ -80,9 +80,14 @@ header {
 }
 
 .logo {
-  display: flex;
-  align-items: center;
+  font-size: 1.2rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  color: var(--primary);
+  max-width: 260px;
+  line-height: 1.25;
 }
+
 /* ==========================================
    DESKTOP NAV
    ========================================== */
@@ -747,11 +752,10 @@ footer {
   }
 
   /* Logo smaller on mobile */
- @media (max-width: 768px) {
-  .logo img {
-    height: 36px;
+  .logo {
+    font-size: 0.95rem;
+    max-width: 200px;
   }
-}
 
   /* Grid stacks */
   .grid-2 {
