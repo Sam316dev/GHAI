@@ -2,24 +2,61 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Gilead Health-Bridge Africa Initiative</title>
-    <link rel="stylesheet" href="style.css?v=1.3">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gilead Health-Bridge Africa Initiative</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header>
+    <header id="siteHeader">
         <div class="container logo-container">
             <div class="logo">Gilead Health-Bridge Africa Initiative</div>
-            <nav>
+            <nav aria-label="Main navigation">
                 <ul class="nav-links">
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">About Us</a></li>
                     <li><a href="#governance">Governance</a></li>
                     <li><a href="#contact">Contact</a></li>
+                    <li>
+                        <a href="https://wa.me/2348160401973?text=Hello%2C%20I'd%20like%20to%20partner%20with%20Gilead%20Health-Bridge%20Africa%20Initiative."
+                           class="btn btn-primary nav-partner-btn"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            Partner With Us
+                        </a>
+                    </li>
                 </ul>
             </nav>
+
+            <button id="burgerBtn" aria-label="Open navigation" aria-expanded="false" aria-controls="mobileMenu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
     </header>
+
+    <!-- Mobile Fullscreen Menu -->
+    <div id="mobileMenu" role="dialog" aria-modal="true" aria-label="Navigation menu">
+        <div class="mob-logo">GILEAD HEALTH-BRIDGE AFRICA INITIATIVE</div>
+        <ul class="mob-nav">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About us</a></li>
+            <li><a href="#governance">Governance</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="mob-divider"></div>
+        <a class="mob-wa"
+           href="https://wa.me/2348160401973?text=Hello%2C%20I'd%20like%20to%20partner%20with%20Gilead%20Health-Bridge%20Africa%20Initiative."
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="Partner with us on WhatsApp">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="white" aria-hidden="true">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+            Partner with us
+        </a>
+    </div>
 
     <section id="home" class="hero">
         <div class="hero-overlay"></div>
@@ -27,8 +64,16 @@
             <h1>Bridging the Gap to Accessible Healthcare in Africa</h1>
             <p>Empowering communities through sustainable health interventions, education, and medical outreach.</p>
             <div class="hero-btns">
-                <a href="#contact" class="btn btn-primary">Partner With Us</a>
+                <a href="https://wa.me/2348160401973?text=Hello%2C%20I'd%20like%20to%20partner%20with%20Gilead%20Health-Bridge%20Africa%20Initiative."
+                   class="btn btn-primary"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Partner With Us
+                </a>
                 <a href="#governance" class="btn btn-secondary">Our Constitution</a>
+            </div>
+            <div class="scroll-hint" aria-hidden="true">
+                <span></span>
             </div>
         </div>
     </section>
@@ -41,18 +86,32 @@
                 <p>Through strategic partnerships and grassroots mobilization, we construct bridges between critical medical resources and the communities that need them most.</p>
             </div>
 
-            <div class="slider-container">
+            <div class="slider-container" role="region" aria-label="Image slideshow">
                 <div class="slide active">
-                    <img src="assets/community-outreach.jpg" alt="Rural Health Mission">
+                    <img src="assets/community-outreach.jpg"
+                         alt="Community health workers conducting rural outreach"
+                         loading="lazy"
+                         onerror="this.src='https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=800'">
                     <div class="slide-caption">Rural Health Mission</div>
                 </div>
                 <div class="slide">
-                    <img src="assets/free-checkup.jpg" alt="Free Medical Clinic">
+                    <img src="assets/free-checkup.jpg"
+                         alt="Medical professionals offering free health checkups to community members"
+                         loading="lazy"
+                         onerror="this.src='https://images.unsplash.com/photo-1559757148-5c350d0d3c56?q=80&w=800'">
                     <div class="slide-caption">Free Medical Checkups</div>
                 </div>
                 <div class="slide">
-                    <img src="assets/health-education.jpg" alt="Health Education Outreach">
+                    <img src="assets/health-education.jpg"
+                         alt="Health education session with community members"
+                         loading="lazy"
+                         onerror="this.src='https://images.unsplash.com/photo-1509099836639-18ba1795216d?q=80&w=800'">
                     <div class="slide-caption">Impact & Health Education</div>
+                </div>
+                <div class="slide-dots" aria-hidden="true">
+                    <span class="dot active"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
                 </div>
             </div>
         </div>
@@ -64,11 +123,10 @@
             <p class="section-sub">We are committed to structural accountability and integrity in all our operations.</p>
 
             <div class="grid-2">
-
-                <div class="image-spot" style="border: none; background: transparent; min-height: 400px;">
-                    <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=600" 
-                         alt="Gilead Health-Bridge Executive Board Meeting" 
-                         style="width: 100%; height: 100%; object-fit: cover; border-radius: var(--radius); box-shadow: var(--shadow-lg);">
+                <div class="image-spot">
+                    <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=800"
+                         alt="Gilead Health-Bridge Executive Board Meeting"
+                         loading="lazy">
                 </div>
 
                 <div class="constitution-teaser">
@@ -76,51 +134,60 @@
                     <p>Established to guide our programs and governance, the GHAI Constitution ensures equitable access to accurate health information across Africa through a transparent, democratic framework.</p>
                     <p>Our charter binds our General Congress and Executive Committee to strict operational accountability, requiring performance-based tenures and dual-signatory management of all organizational funds solely for community health interventions.</p>
 
-                    <div class="gov-actions" style="margin-top: 1.5rem; display: flex; gap: 1rem;">
+                    <div class="gov-actions">
                         <button id="viewConstitutionBtn" class="btn btn-primary">Read Highlights</button>
                         <a href="assets/our-constitution.pdf" class="btn btn-outline" download="our-constitution.pdf">Download Full PDF</a>
                     </div>
                 </div>
-
-            </div> </div>
-    </section>
-
-    <div id="constitutionModal" class="modal">
-        <div class="modal-content">
-            <span class="close-btn">&times;</span>
-            <h3>Constitution Highlights</h3>
-            <div class="modal-body">
-                <h4>Core Vision (Art. II)</h4>
-                <p>To build a healthier Africa by bridging critical gaps in public health awareness, community access, and preventive medical care.</p>
-
-                <h4>Key Action Areas (Art. IV)</h4>
-                <ul>
-                    <li><strong>Awareness:</strong> Targeting preventable conditions like hypertension, diabetes, and mental health disorders.</li>
-                    <li><strong>Outreach:</strong> Organizing community health workshops, clinics, and digital public health campaigns.</li>
-                    <li><strong>Education:</strong> Delivering health resources in clear, culturally relevant local languages.</li>
-                </ul>
-
-                <h4>Accountability (Art. IX)</h4>
-                <p>GHAI maintains a strict corporate bank account requiring dual executive signatures. 100% of incoming donations and grants are direct-channeled into active field projects.</p>
             </div>
         </div>
+    </section>
+
+    <!-- Constitution Modal -->
+  <div class="modal-body">
+
+    <h4>Our Purpose (Art. II & III)</h4>
+    <p>GHAI exists to build a healthier Africa by closing the gaps in health awareness, access, and preventive care. Our mission is simple: educate, empower, and engage communities with life-saving health information that promotes early detection and healthy living.</p>
+
+    <h4>What We Do (Art. IV)</h4>
+    <ul>
+        <li><strong>Raise awareness</strong> on preventable diseases — hypertension, diabetes, HIV/AIDS, and mental health disorders.</li>
+        <li><strong>Organize outreaches</strong> — community health workshops, free clinics, and digital health campaigns.</li>
+        <li><strong>Distribute resources</strong> in clear, culturally relevant local languages so no one is left out.</li>
+        <li><strong>Champion youth</strong> — supporting youth-led innovations and volunteerism in public health.</li>
+        <li><strong>Build partnerships</strong> that advance health equity across the continent.</li>
+    </ul>
+
+    <h4>Who Leads Us (Art. VI)</h4>
+    <p>GHAI is governed by a General Congress — our highest decision-making body — and an Executive Committee that handles day-to-day operations. Officers serve two-year terms renewable by performance, ensuring only committed people hold leadership positions.</p>
+
+    <h4>Financial Integrity (Art. IX & X)</h4>
+    <p>All funds are held in an official bank account under the GHAI name and require any two of three designated signatories to authorize a transaction. Every naira raised — through donations, grants, sponsorships, or fundraising events — goes solely toward our community health objectives. The Treasurer presents financial reports at every General Meeting.</p>
+
+    <h4>Your Voice Matters (Art. XI)</h4>
+    <p>This constitution can only be changed by a two-thirds majority vote of members with 14 days' notice — ensuring no single person can alter the direction of GHAI without broad community agreement.</p>
+
+</div>
+</div>
     </div>
 
     <section id="contact" class="contact-section">
         <div class="container">
             <h2>Get In Touch</h2>
 
-            <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
-
+            <form class="contact-form" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
                 <input type="hidden" name="access_key" value="0823830a-df5a-4fd9-9698-5ee66076660e">
+                <!-- Honeypot spam protection -->
+                <input type="checkbox" name="botcheck" style="display:none;">
 
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="email" name="email" placeholder="Your Email" required>
+                <input type="text" name="name" placeholder="Your Name" required autocomplete="name">
+                <input type="email" name="email" placeholder="Your Email" required autocomplete="email">
                 <textarea name="message" placeholder="How would you like to support Gilead Health-Bridge?" rows="5" required></textarea>
 
-                <button type="submit" class="btn btn-primary" onclick="this.form.submit(); this.disabled=true; this.innerText='Sending...';">Send Message</button>
-            </form>
+                <button type="submit" id="submitBtn" class="btn btn-primary">Send Message</button>
 
+                <div id="formFeedback" class="form-feedback" aria-live="polite"></div>
+            </form>
         </div>
     </section>
 
