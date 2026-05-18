@@ -29,11 +29,12 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+/* Core Layout Container (Fixed Left/Right Side Defaults) */
 .container {
   width: 90%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 6rem 0;
+  padding: 6rem 1rem; /* Left and right padding initialized cleanly */
 }
 
 /* Elegant Sticky Header */
@@ -264,7 +265,7 @@ p {
 
 /* Governance Standard Placeholder Card */
 .image-spot {
-  background: #e2e8f0;
+  background: transparent;
   border-radius: var(--radius);
   min-height: 400px;
   display: flex;
@@ -272,7 +273,14 @@ p {
   align-items: center;
   color: var(--gray);
   font-weight: 600;
-  border: 2px dashed #cbd5e1;
+}
+
+.image-spot img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lg);
 }
 
 /* Form Styling */
@@ -344,22 +352,6 @@ p {
 
 .modal-body h4 { margin: 1.5rem 0 0.5rem 0; color: var(--secondary); font-weight: 700; }
 
-footer {
-  text-align: center;
-  padding: 3rem;
-  background: var(--dark);
-  color: rgba(255,255,255,0.6);
-  font-size: 0.95rem;
-}
-
-/* Responsive Polish */
-@media (max-width: 768px) {
-  .container { padding: 4rem 0; }
-  .nav-links { display: none; }
-  .hero h1 { font-size: 2.5rem; }
-  .contact-form { padding: 1.5rem; }
-  .slider-container { height: 300px; }
-}
 .modal-body ul {
   list-style: none; /* Removes default ugly bullets */
   padding-left: 0.5rem;
@@ -371,7 +363,6 @@ footer {
   margin-bottom: 0.75rem;
 }
 
-/* Adds a sleek custom teal dash or dot */
 .modal-body li::before {
   content: "•";
   color: var(--primary);
@@ -381,42 +372,76 @@ footer {
   left: 0;
   top: -2px;
 }
-/* Premium Mobile Responsiveness Patch */
-@media (max-width: 768px) {
-    
-    /* 1. Fix the header overlapping the hero text */
-    .hero {
-        padding-top: 140px !important; /* Pushes the title down so it clears the header */
-        min-height: 90vh;
-    }
 
-    .hero-content h1 {
-        font-size: 1.8rem !important; /* Makes the title a bit punchier for small screens */
-        line-height: 1.3;
-    }
+footer {
+  text-align: center;
+  padding: 3rem;
+  background: var(--dark);
+  color: rgba(255,255,255,0.6);
+  font-size: 0.95rem;
+}
 
-    /* 2. Add safe breathing room to the sides of the screen */
-    .container {
-        padding-left: 20px !important;
-        padding-right: 20px !important;
-        width: 100% !important;
-    }
+/* Unified & Structured Media Query (Consolidated and Prioritized) */
+@media screen and (max-width: 768px) {
+  .container { 
+    padding: 4rem 20px !important; 
+    width: 100% !important;
+  }
+  
+  .nav-links { 
+    display: none !important; 
+  }
+  
+  header {
+    position: fixed !important; /* Force layout alignment stabilization */
+    width: 100%;
+  }
 
-    /* 3. Stack the 2-column grids cleanly on mobile */
-    .grid-2 {
-        display: flex !important;
-        flex-direction: column !important;
-        gap: 1.5rem !important;
-    }
+  /* Fixes the header blocking the main hero section statement text */
+  .hero { 
+    padding-top: 120px !important;
+    height: auto !important;
+    min-height: 85vh !important;
+    display: flex !important;
+    align-items: center !important;
+  }
 
-    /* 4. Align the buttons side-by-side or stack them nicely */
-    .gov-actions {
-        flex-direction: column !important; /* Stacks the download buttons cleanly if screen is too narrow */
-        gap: 0.75rem !important;
-    }
-    
-    .gov-actions .btn {
-        width: 100% !important; /* Makes buttons touch-friendly on mobile */
-        text-align: center;
-    }
+  .hero h1 { 
+    font-size: 1.9rem !important; 
+    line-height: 1.3 !important;
+  }
+  
+  .hero p {
+    font-size: 1.1rem !important;
+  }
+
+  .grid-2 {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 2.5rem !important;
+  }
+
+  .image-spot, .constitution-teaser, .about-text, .slider-container {
+    width: 100% !important;
+  }
+
+  .slider-container { 
+    height: 280px !important; 
+  }
+  
+  .contact-form { 
+    padding: 2rem 1.5rem !important; 
+  }
+
+  .gov-actions {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.75rem !important;
+  }
+  
+  .gov-actions .btn {
+    width: 100% !important;
+    text-align: center !important;
+    margin-right: 0 !important;
+  }
 }
