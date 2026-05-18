@@ -445,3 +445,71 @@ footer {
     margin-right: 0 !important;
   }
 }
+/* Unified & Structured Media Query (Consolidated and Prioritized) */
+@media screen and (max-width: 768px) {
+  .container { 
+    padding: 4rem 20px !important; 
+    width: 100% !important;
+  }
+  
+  .nav-links { 
+    display: none !important; 
+  }
+  
+  header {
+    position: fixed !important; 
+    width: 100%;
+  }
+
+  /* Fixed: Use an explicit margin offset on the content itself to guarantee clearance */
+  .hero { 
+    height: auto !important;
+    min-height: 90vh !important;
+    padding-top: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+  }
+
+  .hero-content {
+    margin-top: 100px !important; /* This physical barrier forces the text down cleanly */
+  }
+
+  .hero h1 { 
+    font-size: 1.9rem !important; 
+    line-height: 1.3 !important;
+  }
+  
+  .hero p {
+    font-size: 1.1rem !important;
+  }
+
+  .grid-2 {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 2.5rem !important;
+  }
+
+  .image-spot, .constitution-teaser, .about-text, .slider-container {
+    width: 100% !important;
+  }
+
+  .slider-container { 
+    height: 280px !important; 
+  }
+  
+  .contact-form { 
+    padding: 2rem 1.5rem !important; 
+  }
+
+  .gov-actions {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.75rem !important;
+  }
+  
+  .gov-actions .btn {
+    width: 100% !important;
+    text-align: center !important;
+    margin-right: 0 !important;
+  }
+}
